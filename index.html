@@ -1,6 +1,23 @@
-Hello World
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>NO SHAME!</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    </head>
 
-<script type="text/javascript">
-var audio = new Audio('shame.mp3');
-audio.play();
-</script>
+    <body background="IMG_8555.jpg" style="background-size: 100%; background-size: 100%">
+        <div class="container">
+            <div class="text-center jumbotron" style="margin-top:60px">
+                <h1>No Shame!</h1>
+                <script type="text/javascript">
+                function play() {
+                    var audio = new Audio('/noshame.mp3');
+                    audio.play();
+                }
+                </script>
+                <button type="button" style="margin-top:20px" class="btn btn-info btn-lg" onClick="play()">Tell the world</button>
+            </div>
+        </div>
+    </body>
+</html>
