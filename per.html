@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Är det fredag Per?</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC');
+      body  {
+      }
+      h1 {
+        text-align: center;
+        font-family: 'Bowlby One SC', cursive;
+        font-size: 15.5vw;
+      }
+
+    .fullscreen-bg {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -100;
+    }
+
+    .fullscreen-bg__video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (min-aspect-ratio: 16/9) {
+      .fullscreen-bg__video {
+        height: 300%;
+        top: -100%;
+      }
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+      .fullscreen-bg__video {
+        width: 300%;
+        left: -100%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .fullscreen-bg {
+        background: url('karambit.mp4') center center / cover no-repeat;
+      }
+
+      .fullscreen-bg__video {
+        display: none;
+      }
+    }
+
+
+      .blink_me {
+        animation: blinker 8s linear;
+      }
+
+      @keyframes blinker {  
+      50% { opacity: 0; }
+      }
+
+      .color_me {
+        color: red;
+        animation: color 4s infinite;
+      }
+
+      @keyframes color {  
+        0%   {color: red;}
+        25%  {color: yellow;}
+        50%  {color: cyan;}
+        100% {color: orange;}
+      }
+    </style>
+  </head>
+  <body class="">
+    <div class="fullscreen-bg">
+      <video loop muted autoplay poster="karambit.mp4" class="fullscreen-bg__video">
+          
+          <source src="karambit.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="content">
+      <h1 id="demo" class="blink_me">Är det Fredag?</h1>
+    </div>
+
+    <script>
+      var d = new Date();
+      var n = d.getDay()
+
+      setTimeout(function (){
+        if(n == 5){
+            document.getElementById("demo").innerHTML = "Det är fredag";
+            document.getElementById("demo").classList.add("color_me");
+
+          } else {
+            document.getElementById("demo").innerHTML = "tyvärr inte...";
+          }
+      }, 4000); 
+    </script>
+  </body>
+</html>
